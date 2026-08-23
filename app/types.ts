@@ -1,11 +1,11 @@
 export type Category =
-  | "Happy Birthday"
-  | "Wedding"
-  | "Aniversary"
-  | "Romantic"
-  | "Special";
+  | "birthday"
+  | "wedding"
+  | "anniversary"
+  | "romantic"
+  | "special-date";
 
-export interface Design {
+export interface CardDesign {
   id: string;
   name: string;
   category: Category;
@@ -13,9 +13,17 @@ export interface Design {
   videoUrl: string;
 }
 
-export function filterPerCategory(
-  designs: Design[],
+export function filterbyCategory(
+  designs: CardDesign[],
   category: Category
-): Design[] {
+): CardDesign[] {
   return designs.filter((d) => d.category === category);
 }
+
+export const categoryLabels: Record<Category, string> = {
+  birthday: "Cumpleaños",
+  wedding: "Casamiento",
+  anniversary: "Aniversario",
+  romantic: "Románticas",
+  "special-date": "Fechas especiales",
+};
