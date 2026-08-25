@@ -13,7 +13,7 @@ export interface CardDesign {
   videoUrl: string;
 }
 
-export function filterbyCategory(
+export function filterByCategory(
   designs: CardDesign[],
   category: Category
 ): CardDesign[] {
