@@ -1,6 +1,6 @@
 import CardItem from "../../components/CardItem";
-import { sampleDesigns } from "../../sample-data";
-import { Category, categoryLabels, filterByCategory } from "../../types";
+import { prisma } from "../../lib/prisma";
+import { Category, categoryLabels } from "../../types";
 
 interface PageProps {
   params: Promise<{ category: Category }>;
@@ -8,7 +8,7 @@ interface PageProps {
 
 export default async function CategoryPage({ params }: PageProps) {
   const { category } = await params;
-  const designs = filterByCategory(sampleDesigns, category);
+  const designs = await prisma.cardDesign.findMany({ where: { category } });
 
   return (
     <main style={{ padding: 24 }}>

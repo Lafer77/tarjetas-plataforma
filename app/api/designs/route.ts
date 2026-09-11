@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { sampleDesigns } from "../../sample-data";
+import { prisma } from "../../lib/prisma";
 
 export async function GET() {
-  return NextResponse.json(sampleDesigns);
+  const designs = await prisma.cardDesign.findMany();
+  return NextResponse.json(designs);
 }

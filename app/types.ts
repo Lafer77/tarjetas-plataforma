@@ -3,7 +3,7 @@ export type Category =
   | "wedding"
   | "anniversary"
   | "romantic"
-  | "special-date";
+  | "special_date";
 
 export interface CardDesign {
   id: string;
@@ -25,5 +25,5 @@ export const categoryLabels: Record<Category, string> = {
   wedding: "Casamiento",
   anniversary: "Aniversario",
   romantic: "Románticas",
-  "special-date": "Fechas especiales",
+  "special_date": "Fechas especiales",
 };

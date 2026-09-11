@@ -12,7 +12,7 @@ enum Category {
   wedding
   anniversary
   romantic
-  special_date @map("special-date")
+  special_date 
 }
 
 model CardDesign {
