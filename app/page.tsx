@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import CardItem from "./Components/CardItem";
+import CardItem from "./components/CardItem";
 import { sampleDesigns } from "./sample-data";
 import { Category, categoryLabels, filterByCategory } from "./types";
 
