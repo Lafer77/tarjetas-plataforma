@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Category {
+  birthday
+  wedding
+  anniversary
+  romantic
+  special_date @map("special-date")
+}
+
+model CardDesign {
+  id        String   @id @default(cuid())
+  name      String
+  category  Category
+  price     Float
+  videoUrl  String
+  createdAt DateTime @default(now())
+}
